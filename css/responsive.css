@@ -1,0 +1,12 @@
+.options-box {
+  position: absolute;
+}
+.optionsleft {
+  left: -364px;
+}
+.contentleft {
+  left: 0px;
+}
+span {
+  display: inline;
+}

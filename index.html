@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta name="viewport" content="initial-scale=1.0">
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+   <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+     #map {
+       height: 95%;
+       position: absolute;
+       top: 5%;
+       right: 0px;
+     }
+     .mapleft {
+       left: 362px;
+     }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        height: 100%;
+      }
+     .options-box {
+       color: white;
+       background: black;
+       border: 1px solid #999;
+       border-radius: 3px;
+       height: 100%;
+       line-height: 35px;
+       padding: 10px 10px 0px 10px;
+       text-align: left;
+       width: 340px;
+     }
+      h1 {
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+        margin: 0 0 10px 0;
+        text-align: left;
+      }
+      ul {
+        list-style: none;
+        padding: 0px;
+      }
+
+      .selected {
+        background-color: grey;
+      }
+
+      .header {
+        color: white;
+        background: black;
+        width: 100%;
+        height: 5%;
+        position: absolute;
+        left:362px;
+        top: 0px;
+      }
+
+      span {
+        display: none;
+      }
+
+      .map-left {
+        left: 362px;
+      }
+
+      .option-left {
+        left: 0px;
+      }
+
+      @media (max-width: 640px) {
+        .options-box {
+          position: absolute;
+        }
+        .optionsleft {
+          left: -364px;
+        }
+        .contentleft {
+          left: 0px;
+        }
+        /*#map {
+          left: 0px;
+        }
+        .header {
+          left: 0px;
+        }*/
+        span {
+          display: inline;
+        }
+      }
+    </style>
+
+ </head>
+ <body>
+   <div class="container">
+     <div class="options-box" data-bind="css: {optionsleft: hideMenu()}">
+       <h1>Explore Barão Geraldo!</h1>
+       <input type="text" id="filterInput" name="filterInput" data-bind="value: filterInput, valueUpdate: 'afterkeydown'" />
+       <ul data-bind="foreach: filteredList">
+         <li data-bind="text: location.title, click: $parent.listItemClicked, css: {selected: selected()}">
+       </ul>
+     </div>
+     <div class="header" data-bind="css: {contentleft: hideMenu()}">
+       <span data-bind="click: toggleMenu">Menu</span>
+     </div>
+     <div id="map" data-bind="css: {contentleft: hideMenu()}"></div>
+   </div>
+
+   <!-- CDNs for jQuery and Knockout -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+   <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNds5kXY5P7QNGVj9MvG65C-YwIXC9GDQ&v=3&callback=initMap">
+   </script>
+   <script src="js/main.js"></script>
+   <script src="js/model.js"></script>
+ </body>
+</hmtl>

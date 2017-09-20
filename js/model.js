@@ -1,4 +1,4 @@
-'use strict;';
+'use strict';
 
 function Marker(location)  {
   var self = this;

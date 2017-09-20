@@ -1,12 +1,14 @@
-.options-box {
-  position: absolute;
-}
-.optionsleft {
-  left: -364px;
-}
-.contentleft {
-  left: 0px;
-}
-span {
-  display: inline;
+@media (max-width: 640px) {
+  .options-box {
+    position: absolute;
+  }
+  .optionsleft {
+    left: -364px;
+  }
+  .contentleft {
+    left: 0px;
+  }
+  span {
+    display: inline;
+  }
 }

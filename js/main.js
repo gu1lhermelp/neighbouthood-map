@@ -11,3 +11,10 @@ initMap = function() {
 
   ko.applyBindings(new MarkersViewModel());
 };
+
+handleError = function() {
+    console.log("ERROR");
+    var h1 = $("<h1></h1>").text("Could not connect to Google Maps API");
+    console.log(h1);
+    $("#map").append(h1);
+};

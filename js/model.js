@@ -80,12 +80,14 @@ function MarkersViewModel() {
     var lng = marker.location.location.lng;
     var text;
     // JSON Request to Foursquare API
-    var jqxhr = $.get(fsq_venue_endpoint + "&ll=" + lat +"," + lng, function(response) {
+    var jqxhr = $.get(fsqVenueEndpoint + "&ll=" + lat +"," + lng, function(response) {
       var name = response.response.venues[0].name;
       var address = response.response.venues[0].location.address;
       text = name;
       if (address != undefined) {
         text += "<br/>" + address;
+      } else {
+        text += "<br/> Address not found"
       }
     });
     // Set callbacks to show info window when JSON request finishes
